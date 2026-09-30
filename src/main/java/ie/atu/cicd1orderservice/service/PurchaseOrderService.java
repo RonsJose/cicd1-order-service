@@ -2,6 +2,7 @@ package ie.atu.cicd1orderservice.service;
 
 import ie.atu.cicd1orderservice.Repository.PurchaseOrderRepository;
 import ie.atu.cicd1orderservice.client.CatalogClient;
+import ie.atu.cicd1orderservice.client.dto.ProductResponse;
 import ie.atu.cicd1orderservice.model.PurchaseOrder;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class PurchaseOrderService {
         return purchaseOrderRepository.save(order);
     }
 
-    public String testCatalogConnection(Long productId) {
+    public ProductResponse testCatalogConnection(Long productId) {
         return catalogClient.getProductById(productId);
     }
 }
