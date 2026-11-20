@@ -1,0 +1,12 @@
+services:
+  order:
+    image: cicd1-order-service:lab7
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:h2:file:/app/data/orderdb"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    volumes:
+      - order_data:/app/data
+volumes:
+  order_data:
